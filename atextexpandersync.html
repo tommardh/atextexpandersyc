@@ -1,14 +1,22 @@
 <head>
-  <title>atextexpandersync</title>
+  <title>A Text Expander Synchronization Tool</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <div class="Container">
+    <header>
+  	  <h1>Expander Group List</h1>
+    </header>
+  
+    <ul>
+      {{#each expandergroups}}
+        {{> expandergroup}}
+      {{/each}}
+    </ul>
+  </div>
 
-  {{> hello}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="expandergroup">
+  <li>{{text}}</li>
 </template>
