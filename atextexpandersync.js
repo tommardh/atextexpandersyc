@@ -1,13 +1,13 @@
+Expandergroups = new Mongo.Collection("expandergroups")
+
 if (Meteor.isClient) {
   
   Session.setDefault('counter', 0);
 
   Template.body.helpers({
-    expandergroups: [
-      { text: "Evernote" },
-      { text: "Autocorrect" },
-      { text: "Git" }
-    ]
+    expandergroups: function () {
+      return Expandergroups.find ({});
+    }
   });
 }
 
