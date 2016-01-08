@@ -5,7 +5,13 @@
 <body>
   <div class="Container">
     <header>
-  	  <h1>Expander Group List</h1>
+  	  <h1>Expander Group List ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide inactive items
+      </label>
+
       <form class="new-expandergroup">
         <input type="text" name="text" placeholder="Type to add new expandergroups" />
       </form>
