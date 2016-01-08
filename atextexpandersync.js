@@ -1,7 +1,6 @@
 Expandergroups = new Mongo.Collection("expandergroups")
 
 if (Meteor.isClient) {
-  
   Template.body.helpers({
     expandergroups: function () {
       return Expandergroups.find ({}, {sort: {text: 1}});
@@ -24,6 +23,18 @@ if (Meteor.isClient) {
  
       // Clear form
       event.target.text.value = "";
+    }
+  });
+
+   Template.expandergroup.events({
+    "click .toggle-checked": function () {
+      // Set the checked property to the opposite of its current value
+      Expandergroups.update(this._id, {
+        $set: {checked: ! this.checked}
+      });
+    },
+    "click .delete": function () {
+      Expandergroups.remove(this._id);
     }
   });
 }
