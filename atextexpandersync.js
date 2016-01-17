@@ -52,6 +52,10 @@ if (Meteor.isClient) {
       Expandergroups.remove(this._id);
     }
   });
+
+   Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+  });
 }
 
 
