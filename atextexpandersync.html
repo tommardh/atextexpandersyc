@@ -13,10 +13,12 @@
       </label>
 
       {{> loginButtons}}
-      
-      <form class="new-expandergroup">
-        <input type="text" name="text" placeholder="Type to add new expandergroups" />
-      </form>
+
+      {{#if currentUser}}
+        <form class="new-expandergroup">
+          <input type="text" name="text" placeholder="Type to add new expandergroups" />
+        </form>
+      {{/if}}
     </header>
   
     <ul>
